@@ -6,10 +6,11 @@ const NETWORKS = AnchorEarnPackage.NETWORKS;
 
 //GET '/tea'
 const getANC_INFO = async (req, res, next) => {
+    let terra_address = req.params.adress;
     const anchorEarn = new AnchorEarn({
         chain: CHAINS.TERRA,
         network: NETWORKS.COLUMBUS_5,
-        address: 'terra1vj95w4yec4az2ehhwdeh59w0k34maxqr580lnd'
+        address: terra_address
     });
     
     const userBalance = await anchorEarn.balance({
